@@ -38,16 +38,16 @@ internal class Program
 
         while (true)
         {
-        Console.WriteLine("-------------------------------------");
-        Console.WriteLine("         MENU PRINCIPAL.             ");
-        Console.WriteLine("          MATEMATICAS.               ");
-        Console.WriteLine("-------------------------------------");
-        Console.WriteLine("{0, -10}", "1. registrar estudiante:");
-        Console.WriteLine("{0, -10}", "2. Ingresar las notas: ");
-        Console.WriteLine("{0, -10}", "3. Ver notas");
-        Console.WriteLine("{0, -10}", "4. Salir");
-        Console.WriteLine("Ingrese una opcion: ");
-        string opcion =  Console.ReadLine();
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine("         MENU PRINCIPAL.             ");
+            Console.WriteLine("          MATEMATICAS.               ");
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine("{0, -10}", "1. registrar estudiante:");
+            Console.WriteLine("{0, -10}", "2. Ingresar las notas: ");
+            Console.WriteLine("{0, -10}", "3. Ver notas");
+            Console.WriteLine("{0, -10}", "4. Salir");
+            Console.WriteLine("Ingrese una opcion: ");
+            string opcion =  Console.ReadLine();
 
             switch (opcion)
             {
@@ -90,7 +90,7 @@ internal class Program
             Console.Clear();
     }
 
-public static void ingresoNotas()
+    public static void ingresoNotas()
     {
         Console.WriteLine("Ingrese el codigo del estudiante: ");
         string codigoEstu = Console.ReadLine();
@@ -114,8 +114,13 @@ public static void ingresoNotas()
         {
             estudiantes.notaTrabajos.Add(double.Parse(nota));
         }
-
-}
+        Console.WriteLine("Notas de parciales (p1, p2, p3):");
+        string[]notaParciales = Console.ReadLine().Split();
+        foreach(string nota in notaParciales)
+        {
+            estudiantes.notaParciales.Add(double.Parse(nota));
+        }
+        Console.WriteLine("Notas ingresadas exitosamente.");}
 
     public static string verificarDatos(string data, int lenData, string palabra){
     bool contVeri = true;
@@ -146,6 +151,46 @@ public static void ingresoNotas()
    } */
 
 
+    static void generarReportes()
+    {
+        Console.WriteLine("------------GENERAR REPORTES-----------");
+        Console.WriteLine("1.-Listado general de notas del grupo--");
+        Console.WriteLine("2.--Paginado por ID del estudiante-----");
+        Console.WriteLine("3.---------Seleccione una opcion-------");
+        string opcioon = Console.ReadLine();
+        switch (opcioon)
+        {
+            case "1":
+                listadoGeneralNotas();
+                break;
 
+            case "2":
+            
+                break;
+
+            default:
+                Console.WriteLine("Opcion no valida. Por favor, seleccione una opcion valida");
+                break;
+                }
 }
+
+    static void listadoGeneralNotas()
+    {
+        Console.WriteLine("-------------LISTADO GENERAL DE NOTAS DEL GRUPO--------------------");
+        Console.WriteLine("Codigo     Nombre      Quices         Trabajos            Parciales");
+        Console.WriteLine("                      Q1  Q2 Q3 Q4      T1 T2           P1  P2  P3 ");
+        Console.WriteLine("-------------------------------------------------------------------");
+        foreach (Estudiantes estudiantes in estudiantes)
+        {
+        Console.WriteLine($"{estudiantes.Codigo,-7} {estudiantes.Nombre,-18}");
+
+        foreach (double nota in estudiantes.notaQuices)
+        {
+            Console.WriteLine($"{nota,-5:f2}");
+        }
+        Console.WriteLine();
+        }
+
+    }
+    }
 

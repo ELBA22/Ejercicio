@@ -36,6 +36,39 @@ namespace Ejercicio.Entiiens
             get { return direccion; }
             set { direccion = value; }
         }
+
+        private int notaquices;
+
+        private int notatrabajos;
+
+        private int notaparciales;
+
+
+        public int notaQuices
+        {
+            get { return notaquices; }
+            set { notaquices = value; }
+        }
+
+        public int notaTrabajos
+        {
+            get { return notatrabajos; }
+            set { notaTrabajos = value; }
+        }
+
+        public int notaParciales
+        {
+            get { return notaparciales; }
+            set { notaparciales = value; }
+        }
+
+
+
+        
+
         
     }
+
 }
+
+
