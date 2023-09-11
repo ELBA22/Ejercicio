@@ -34,7 +34,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        List<Estudiantes>LstCalse = new List<Estudiantes>();
+        List<Estudiante>LstCalse = new List<Estudiante>();
 
         while (true)
         {
@@ -52,7 +52,7 @@ internal class Program
             switch (opcion)
             {
                 case "1":
-                    Estudiantes(LstCalse);
+                    Estudiante(LstCalse);
                     break;
 
                 case "2":
@@ -76,15 +76,15 @@ internal class Program
         }
     }
 
-    public static void Estudiantes(List<Estudiantes>LstCalse)
+    public static void Estudiante(List<Estudiante>LstCalse)
     {
-            Estudiantes estudiantes = new Estudiantes();
-            estudiantes.Codigo = verificarDatos("", 15, "Codigo");
-            estudiantes.Nombre = verificarDatos("", 30, "Nombre");
-            estudiantes.Email = verificarDatos("", 40, "Email");
-            estudiantes.Edad = Convert.ToInt16(verificarDatos("", 4, "Edad"));
-            estudiantes.Direccion = verificarDatos("", 40, "Direccion");
-            LstCalse.Add(estudiantes);
+            Estudiante estudiante = new Estudiante();
+            estudiante.Codigo = verificarDatos("", 15, "Codigo");
+            estudiante.Nombre = verificarDatos("", 30, "Nombre");
+            estudiante.Email = verificarDatos("", 40, "Email");
+            estudiante.Edad = Convert.ToInt16(verificarDatos("", 4, "Edad"));
+            estudiante.Direccion = verificarDatos("", 40, "Direccion");
+            LstCalse.Add(estudiante);
             Console.Write("Estudiante Agregado correctamente");
             Console.ReadKey();
             Console.Clear();
@@ -94,31 +94,31 @@ internal class Program
     {
         Console.WriteLine("Ingrese el codigo del estudiante: ");
         string codigoEstu = Console.ReadLine();
-        Estudiantes estudiantes = estudiantes.Find(i => i.codigo == codigoEstu);
+        Estudiante estudiante = estudiante.Find(i => i.codigo == codigoEstu);
 
-        if (estudiantes == null)
+        if (estudiante == null)
         {
             Console.WriteLine("No se ha encontrado ningun estudiante con ese codigo.");
             return;
         }
 
         Console.WriteLine("Nota de quices (q1, q2, q3, q4):");
-        string[]notaQuices = Console.ReadLine().Split();
+        string[] notaQuices = Console.ReadLine().Split();
         foreach(string nota in notaQuices)
         {
-            estudiantes.notaQuices.Add(double.Parse(nota));
+            estudiante.notaQuices(2);
         }
         Console.WriteLine("Notas de trabajos (t1, t2):");
         string[] notaTrabajos = Console.ReadLine().Split();
         foreach(string nota in notaTrabajos)
         {
-            estudiantes.notaTrabajos.Add(double.Parse(nota));
+            estudiante.notaTrabajos.Add(double.Parse(nota));
         }
         Console.WriteLine("Notas de parciales (p1, p2, p3):");
         string[]notaParciales = Console.ReadLine().Split();
         foreach(string nota in notaParciales)
         {
-            estudiantes.notaParciales.Add(double.Parse(nota));
+            estudiante.notaParciales.Add(double.Parse(nota));
         }
         Console.WriteLine("Notas ingresadas exitosamente.");}
 
@@ -137,7 +137,7 @@ internal class Program
     return data;
 }
 
-/*    public static void verEstudiantes(){
+/*    public static void verEstudiante(){
     Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("{0,-36} {1, -30} {2,-10} {3,-7} {4, -20}", "codigo. Estudiante", "Nombre ", "Email", "Edad", "Direccion");
             for (int j=0;j<LstCalse.Count;j++)
@@ -145,7 +145,7 @@ internal class Program
                 Console.WriteLine("{0,-36} {1,-30} {2,-10} {3, -7} {4, -20}", LstCalse[j].Codigo, LstCalse[j].Nombre, LstCalse[j].Email, LstCalse[j].Edad, LstCalse[j].Direccion);
             }
 
-            foreach (Estudiantes est in LstCalse){
+            foreach (Estudiante est in LstCalse){
             Console.WriteLine("{0, 36} {1, -30} {2,-36} {3, 2} {4, -30}", est.Codigo, est.Nombre, est.Email, est.Edad, est.Direccion);
             
    } */
@@ -180,17 +180,28 @@ internal class Program
         Console.WriteLine("Codigo     Nombre      Quices         Trabajos            Parciales");
         Console.WriteLine("                      Q1  Q2 Q3 Q4      T1 T2           P1  P2  P3 ");
         Console.WriteLine("-------------------------------------------------------------------");
-        foreach (Estudiantes estudiantes in estudiantes)
+        foreach (Estudiante estudiante in estudiantes)
         {
-        Console.WriteLine($"{estudiantes.Codigo,-7} {estudiantes.Nombre,-18}");
+        Console.WriteLine($"{estudiante.Codigo,-7} {estudiante.Nombre,-18}");
 
-        foreach (double nota in estudiantes.notaQuices)
+        foreach (double nota in estudiante.notaQuices)
         {
             Console.WriteLine($"{nota,-5:f2}");
         }
-        Console.WriteLine();
+        
+            foreach (double nota in estudiante.notaTrabajos)
+            {
+                Console.Write($"{nota,-5:F2} ");
+            }
+
+            foreach (double nota in estudiante.notaParciales)
+            {
+                Console.Write($"{nota,-5:F2} ");
+            }
+
+            Console.WriteLine();
         }
 
     }
-    }
+}
 

@@ -2,7 +2,7 @@
 
 namespace Ejercicio.Entiiens
 {
-    public class Estudiantes
+    public class Estudiante
     {
         private string codigo;
         private string nombre;
@@ -37,7 +37,7 @@ namespace Ejercicio.Entiiens
             set { direccion = value; }
         }
 
-        private int notaquices;
+        public int notaquices;
 
         private int notatrabajos;
 
