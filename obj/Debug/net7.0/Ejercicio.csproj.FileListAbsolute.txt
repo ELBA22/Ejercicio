@@ -26,3 +26,17 @@ C:\Users\Dell Vostro 14\Desktop\EjercicioCsh\Ejercicio\obj\Debug\net7.0\refint\E
 C:\Users\Dell Vostro 14\Desktop\EjercicioCsh\Ejercicio\obj\Debug\net7.0\Ejercicio.pdb
 C:\Users\Dell Vostro 14\Desktop\EjercicioCsh\Ejercicio\obj\Debug\net7.0\Ejercicio.genruntimeconfig.cache
 C:\Users\Dell Vostro 14\Desktop\EjercicioCsh\Ejercicio\obj\Debug\net7.0\ref\Ejercicio.dll
+C:\Users\APM02-064\Desktop\C#\Ejercicio\bin\Debug\net7.0\Ejercicio.exe
+C:\Users\APM02-064\Desktop\C#\Ejercicio\bin\Debug\net7.0\Ejercicio.deps.json
+C:\Users\APM02-064\Desktop\C#\Ejercicio\bin\Debug\net7.0\Ejercicio.runtimeconfig.json
+C:\Users\APM02-064\Desktop\C#\Ejercicio\bin\Debug\net7.0\Ejercicio.dll
+C:\Users\APM02-064\Desktop\C#\Ejercicio\bin\Debug\net7.0\Ejercicio.pdb
+C:\Users\APM02-064\Desktop\C#\Ejercicio\obj\Debug\net7.0\Ejercicio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\APM02-064\Desktop\C#\Ejercicio\obj\Debug\net7.0\Ejercicio.AssemblyInfoInputs.cache
+C:\Users\APM02-064\Desktop\C#\Ejercicio\obj\Debug\net7.0\Ejercicio.AssemblyInfo.cs
+C:\Users\APM02-064\Desktop\C#\Ejercicio\obj\Debug\net7.0\Ejercicio.csproj.CoreCompileInputs.cache
+C:\Users\APM02-064\Desktop\C#\Ejercicio\obj\Debug\net7.0\Ejercicio.dll
+C:\Users\APM02-064\Desktop\C#\Ejercicio\obj\Debug\net7.0\refint\Ejercicio.dll
+C:\Users\APM02-064\Desktop\C#\Ejercicio\obj\Debug\net7.0\Ejercicio.pdb
+C:\Users\APM02-064\Desktop\C#\Ejercicio\obj\Debug\net7.0\Ejercicio.genruntimeconfig.cache
+C:\Users\APM02-064\Desktop\C#\Ejercicio\obj\Debug\net7.0\ref\Ejercicio.dll

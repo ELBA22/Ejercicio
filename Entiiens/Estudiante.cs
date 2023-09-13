@@ -2,70 +2,75 @@
 
 namespace Ejercicio.Entiiens
 {
-    public class Estudiante
+    public class Estudiante:Boletin
     {
-        private string codigo;
+       private string code;
         private string nombre;
-        private string email;
-        private int edad;
         private string direccion;
-        public string Codigo
-        {
-            get { return codigo; }
-            set { codigo = value; }
-        }
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
-        public string Email
-        {
-            get { return email; }
-            set { email = value; }
-        }
-
-        public int Edad
-        {
-            get { return edad; }
-            set { edad = value; }
-        }
-
-        public string Direccion
-        {
-            get { return direccion; }
-            set { direccion = value; }
-        }
-
-        public int notaquices;
-
-        private int notatrabajos;
-
-        private int notaparciales;
-
-
-        public int notaQuices
-        {
-            get { return notaquices; }
-            set { notaquices = value; }
-        }
-
-        public int notaTrabajos
-        {
-            get { return notatrabajos; }
-            set { notaTrabajos = value; }
-        }
-
-        public int notaParciales
-        {
-            get { return notaparciales; }
-            set { notaparciales = value; }
-        }
-
-
+        private byte edad;
 
         
 
+        public Estudiante():base()
+        {
+        }
+
+        public Estudiante(List<float> quices, List<float> trabajos, List<float> parciales, string code, string nombre, string direccion, byte edad):base(quices,trabajos,parciales)
+        {
+            this.Code = code;
+            this.Nombre = nombre;
+            this.Direccion = direccion;
+            this.Edad = edad;
+            this.Quices = quices;
+            this.Trabajos = trabajos;
+            this.Parciales = parciales;
+        }
+
+        public string Code { get => code; set => code = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Direccion { get => direccion; set => direccion = value; }
+        public byte Edad { get => edad; set => edad = value; }
+    public void InfoEstudiante(List<Estudiante> estudiantes){
+        Estudiante estudiante = new Estudiante();
+        Console.Write("Codigo: ");
+        estudiante.Code = Console.ReadLine();
+        Console.Write("Nombre: ");
+        estudiante.Nombre = Console.ReadLine();
+        Console.Write("Direccion: ");
+        estudiante.Direccion = Console.ReadLine();
+        Console.Write("Edad: ");
+        estudiante.Edad = Convert.ToByte(Console.ReadLine());
+        estudiante.Quices = new List<float>();
+        estudiante.Trabajos = new List<float>();
+        estudiante.Parciales = new List<float>();
+        estudiantes.Add(estudiante);
+    }
+
+    public void RegistroNota(List<Estudiante> estudiantes, int opcion){
+        Console.WriteLine("Ingrese el codigo del estudiante: ");
+        string studenCode = Console.ReadLine();
+        // Estudiante alumno =  new Estudiante();
+        Estudiante alumno = estudiantes.FirstOrDefault(x=>x.Code.Equals(studenCode));
+        Console.WriteLine("Por favor ingrese la nota: ");
+        switch (opcion)
+        {
+            case 1:
+                alumno.Quices.Add(float.Parse(Console.ReadLine()));
+                break;
+            case 2:
+                alumno.Trabajos.Add(float.Parse(Console.ReadLine()));
+                break;
+            case 3:
+                alumno.Parciales.Add(float.Parse(Console.ReadLine()));
+                break;
+            default:
+                Console.WriteLine("Opcion no valida");
+                Console.ReadKey();
+                break;
+        }
+        int idx = estudiantes.FindIndex(p=>p.Code.Equals(studenCode));
+        estudiantes[idx] = alumno;
+    }
         
     }
 

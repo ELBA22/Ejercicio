@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell Vostro 14\\Desktop\\EjercicioCsh\\Ejercicio\\Ejercicio.csproj": {}
+    "C:\\Users\\APM02-064\\Desktop\\C#\\Ejercicio\\Ejercicio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell Vostro 14\\Desktop\\EjercicioCsh\\Ejercicio\\Ejercicio.csproj": {
+    "C:\\Users\\APM02-064\\Desktop\\C#\\Ejercicio\\Ejercicio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell Vostro 14\\Desktop\\EjercicioCsh\\Ejercicio\\Ejercicio.csproj",
+        "projectUniqueName": "C:\\Users\\APM02-064\\Desktop\\C#\\Ejercicio\\Ejercicio.csproj",
         "projectName": "Ejercicio",
-        "projectPath": "C:\\Users\\Dell Vostro 14\\Desktop\\EjercicioCsh\\Ejercicio\\Ejercicio.csproj",
-        "packagesPath": "C:\\Users\\Dell Vostro 14\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell Vostro 14\\Desktop\\EjercicioCsh\\Ejercicio\\obj\\",
+        "projectPath": "C:\\Users\\APM02-064\\Desktop\\C#\\Ejercicio\\Ejercicio.csproj",
+        "packagesPath": "C:\\Users\\APM02-064\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\APM02-064\\Desktop\\C#\\Ejercicio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dell Vostro 14\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\APM02-064\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -37,6 +37,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

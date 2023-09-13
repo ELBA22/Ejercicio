@@ -29,54 +29,72 @@ trabajos y parciales.
 
 
 using System.Xml.Serialization;
+using Boletin;
 using Ejercicio.Entiiens;
 internal class Program
 {
     private static void Main(string[] args)
     {
-        List<Estudiante>LstCalse = new List<Estudiante>();
-
-        while (true)
+        List<Estudiante>estudiantes = new List<Estudiante>();
+        Estudiante student = new Estudiante();
+        bool cicloMenu = true;
+        while (cicloMenu)
         {
-            Console.WriteLine("-------------------------------------");
-            Console.WriteLine("         MENU PRINCIPAL.             ");
-            Console.WriteLine("          MATEMATICAS.               ");
-            Console.WriteLine("-------------------------------------");
-            Console.WriteLine("{0, -10}", "1. registrar estudiante:");
-            Console.WriteLine("{0, -10}", "2. Ingresar las notas: ");
-            Console.WriteLine("{0, -10}", "3. Ver notas");
-            Console.WriteLine("{0, -10}", "4. Salir");
-            Console.WriteLine("Ingrese una opcion: ");
-            string opcion =  Console.ReadLine();
+            
+            byte opcion= MisFunciones.MenuPrincipal();
+            switch (opcion){
 
-            switch (opcion)
-            {
-                case "1":
-                    Estudiante(LstCalse);
+                case 1:
+                    student.InfoEstudiante(estudiantes);
                     break;
 
-                case "2":
-                    Console.WriteLine("{0,-36} {1, -30} {2,-10} {3,-7} {4, -20}", "codigo. Estudiante", "Nombre ", "Email", "Edad", "Direccion");
-                    for (int j=0;j<LstCalse.Count;j++)
-                    {
-                    Console.WriteLine("{0,-36} {1,-30} {2,-10} {3, -7} {4, -20}", LstCalse[j].Codigo, LstCalse[j].Nombre, LstCalse[j].Email, LstCalse[j].Edad, LstCalse[j].Direccion);
+                case 2:
+                    bool cicloNotas = true;
+                    while (cicloNotas){
+                        Console.Clear();
+                    byte opcionNotas = MisFunciones.MenuNotas();
+                    if(opcionNotas != 0)
+                        student.RegistroNota(estudiantes,opcionNotas);
                     }
-                    Console.ReadKey();
                     break;
-                case "3":
+                case 3:
+                    bool cicloReportes = true;
+                    while (cicloReportes){
+                        Console.Clear();
+                        byte opcionRegistro = MisFunciones.Reportes();
+                        switch (opcionRegistro){
+                        case 1:
+                            Console.Clear();
+                            break;
+                        case 2:
+                            Console.Clear();
+                            break;
+                        case 0:
+                            Console.Clear();
+                            break;
+                        default:
+                            Console.WriteLine("Opcion invalida");
+                            Console.Write("Presione Enter para volver a intentarlo: ");
+                            Console.ReadKey();
+                            break;
+
+                        }
+                    }
                     
                     break;
-                case "4":
-                    
+                case 4:
+                    cicloMenu = false;
                     break;
                 default:
                     Console.WriteLine("Opción no válida. Por favor, seleccione una opción válida.");
+                    Console.Write("Presecione Enter para volver a ingresar: ");
+                    Console.ReadKey();
                     break;
             }
         }
     }
 
-    public static void Estudiante(List<Estudiante>LstCalse)
+  /*   public static void Estudiante(List<Estudiante>LstCalse)
     {
             Estudiante estudiante = new Estudiante();
             estudiante.Codigo = verificarDatos("", 15, "Codigo");
@@ -88,54 +106,10 @@ internal class Program
             Console.Write("Estudiante Agregado correctamente");
             Console.ReadKey();
             Console.Clear();
-    }
+    } */
 
-    public static void ingresoNotas()
-    {
-        Console.WriteLine("Ingrese el codigo del estudiante: ");
-        string codigoEstu = Console.ReadLine();
-        Estudiante estudiante = estudiante.Find(i => i.codigo == codigoEstu);
+    
 
-        if (estudiante == null)
-        {
-            Console.WriteLine("No se ha encontrado ningun estudiante con ese codigo.");
-            return;
-        }
-
-        Console.WriteLine("Nota de quices (q1, q2, q3, q4):");
-        string[] notaQuices = Console.ReadLine().Split();
-        foreach(string nota in notaQuices)
-        {
-            estudiante.notaQuices(2);
-        }
-        Console.WriteLine("Notas de trabajos (t1, t2):");
-        string[] notaTrabajos = Console.ReadLine().Split();
-        foreach(string nota in notaTrabajos)
-        {
-            estudiante.notaTrabajos.Add(double.Parse(nota));
-        }
-        Console.WriteLine("Notas de parciales (p1, p2, p3):");
-        string[]notaParciales = Console.ReadLine().Split();
-        foreach(string nota in notaParciales)
-        {
-            estudiante.notaParciales.Add(double.Parse(nota));
-        }
-        Console.WriteLine("Notas ingresadas exitosamente.");}
-
-    public static string verificarDatos(string data, int lenData, string palabra){
-    bool contVeri = true;
-    while (contVeri)
-    {
-        Console.WriteLine($"Ingrese el {palabra} del estudiante: ");
-        data = Console.ReadLine();
-        if ((data.Length <= lenData) && (data.Length != 0)){
-            contVeri = false;
-        } else {
-            Console.WriteLine($"Ingrese los parametros correctos para {palabra}:");
-        }
-    }
-    return data;
-}
 
 /*    public static void verEstudiante(){
     Console.ForegroundColor = ConsoleColor.Blue;
@@ -151,57 +125,5 @@ internal class Program
    } */
 
 
-    static void generarReportes()
-    {
-        Console.WriteLine("------------GENERAR REPORTES-----------");
-        Console.WriteLine("1.-Listado general de notas del grupo--");
-        Console.WriteLine("2.--Paginado por ID del estudiante-----");
-        Console.WriteLine("3.---------Seleccione una opcion-------");
-        string opcioon = Console.ReadLine();
-        switch (opcioon)
-        {
-            case "1":
-                listadoGeneralNotas();
-                break;
-
-            case "2":
-            
-                break;
-
-            default:
-                Console.WriteLine("Opcion no valida. Por favor, seleccione una opcion valida");
-                break;
-                }
-}
-
-    static void listadoGeneralNotas()
-    {
-        Console.WriteLine("-------------LISTADO GENERAL DE NOTAS DEL GRUPO--------------------");
-        Console.WriteLine("Codigo     Nombre      Quices         Trabajos            Parciales");
-        Console.WriteLine("                      Q1  Q2 Q3 Q4      T1 T2           P1  P2  P3 ");
-        Console.WriteLine("-------------------------------------------------------------------");
-        foreach (Estudiante estudiante in estudiantes)
-        {
-        Console.WriteLine($"{estudiante.Codigo,-7} {estudiante.Nombre,-18}");
-
-        foreach (double nota in estudiante.notaQuices)
-        {
-            Console.WriteLine($"{nota,-5:f2}");
-        }
-        
-            foreach (double nota in estudiante.notaTrabajos)
-            {
-                Console.Write($"{nota,-5:F2} ");
-            }
-
-            foreach (double nota in estudiante.notaParciales)
-            {
-                Console.Write($"{nota,-5:F2} ");
-            }
-
-            Console.WriteLine();
-        }
-
-    }
 }
 
