@@ -1,15 +1,15 @@
-
+using System.Collections;
+using Ejercicio;
 
 namespace Ejercicio.Entiiens
 {
     public class Estudiante:Boletin
     {
-       private string code;
+        private string code;
         private string nombre;
+        private string email;
         private string direccion;
         private byte edad;
-
-        
 
         public Estudiante():base()
         {

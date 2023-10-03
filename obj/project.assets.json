@@ -55,19 +55,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\APM02-064\\.nuget\\packages\\": {}
+    "C:\\Users\\Dell Vostro 14\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\APM02-064\\Desktop\\C#\\Ejercicio\\Ejercicio.csproj",
+      "projectUniqueName": "c:\\Users\\Dell Vostro 14\\Desktop\\EstudC#\\Ejercicio\\Ejercicio.csproj",
       "projectName": "Ejercicio",
-      "projectPath": "C:\\Users\\APM02-064\\Desktop\\C#\\Ejercicio\\Ejercicio.csproj",
-      "packagesPath": "C:\\Users\\APM02-064\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\APM02-064\\Desktop\\C#\\Ejercicio\\obj\\",
+      "projectPath": "c:\\Users\\Dell Vostro 14\\Desktop\\EstudC#\\Ejercicio\\Ejercicio.csproj",
+      "packagesPath": "C:\\Users\\Dell Vostro 14\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\Dell Vostro 14\\Desktop\\EstudC#\\Ejercicio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\APM02-064\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Dell Vostro 14\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
