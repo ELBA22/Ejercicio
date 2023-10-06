@@ -94,7 +94,7 @@ internal class Program
         }
     }
 
-  /*   public static void Estudiante(List<Estudiante>LstCalse)
+/*   public static void Estudiante(List<Estudiante>LstCalse)
     {
             Estudiante estudiante = new Estudiante();
             estudiante.Codigo = verificarDatos("", 15, "Codigo");

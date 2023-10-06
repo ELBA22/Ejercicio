@@ -10,9 +10,16 @@ namespace Ejercicio.Entiiens
         List<float> quices = new List<float>();
         List<float> trabajos = new List<float>();
         List<float> parciales = new List<float>();
+        private object value;
 
         public Boletin()
         {
+        }
+
+        public Boletin(List<float> quices, object value)
+        {
+            this.quices = quices;
+            this.value = value;
         }
 
         public Boletin(List<float> quices, List<float> trabajos, List<float> parciales)

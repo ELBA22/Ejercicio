@@ -15,12 +15,14 @@ namespace Ejercicio.Entiiens
         {
         }
 
-        public Estudiante(List<float> quices, List<float> trabajos, List<float> parciales, string code, string nombre, string direccion, byte edad):base(quices,trabajos,parciales)
+        public Estudiante(string Id, string Nombre, string Email, string Direccion, byte Edad, 
+        List<float> quices, List<float>  trabajos, List<float> parciales):base(quices, trabajos, parciales)
         {
-            this.Code = code;
-            this.Nombre = nombre;
-            this.Direccion = direccion;
-            this.Edad = edad;
+            this.code = Id;
+            this.nombre = Nombre;
+            this.email = Email;
+            this.direccion = Direccion;
+            this.edad = Edad;
             this.Quices = quices;
             this.Trabajos = trabajos;
             this.Parciales = parciales;
@@ -28,6 +30,7 @@ namespace Ejercicio.Entiiens
 
         public string Code { get => code; set => code = value; }
         public string Nombre { get => nombre; set => nombre = value; }
+        public string Email { get => email; set => email = value; }
         public string Direccion { get => direccion; set => direccion = value; }
         public byte Edad { get => edad; set => edad = value; }
     public void InfoEstudiante(List<Estudiante> estudiantes){

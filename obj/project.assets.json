@@ -60,11 +60,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Dell Vostro 14\\Desktop\\EstudC#\\Ejercicio\\Ejercicio.csproj",
+      "projectUniqueName": "C:\\Users\\Dell Vostro 14\\Desktop\\Ejercicioc#\\Ejercicio.csproj",
       "projectName": "Ejercicio",
-      "projectPath": "c:\\Users\\Dell Vostro 14\\Desktop\\EstudC#\\Ejercicio\\Ejercicio.csproj",
+      "projectPath": "C:\\Users\\Dell Vostro 14\\Desktop\\Ejercicioc#\\Ejercicio.csproj",
       "packagesPath": "C:\\Users\\Dell Vostro 14\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Dell Vostro 14\\Desktop\\EstudC#\\Ejercicio\\obj\\",
+      "outputPath": "C:\\Users\\Dell Vostro 14\\Desktop\\Ejercicioc#\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Dell Vostro 14\\AppData\\Roaming\\NuGet\\NuGet.Config"
